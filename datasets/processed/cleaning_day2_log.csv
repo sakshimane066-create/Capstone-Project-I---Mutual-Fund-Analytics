@@ -1,0 +1,73 @@
+dataset,action,rows_affected
+fund_master,fund_house names standardised ('MF' -> 'Mutual Fund'),20
+fund_master,non-numeric 'expense_ratio_pct' values set to NaN,0
+fund_master,non-numeric 'exit_load_pct' values set to NaN,0
+fund_master,non-numeric 'min_sip_amount' values set to NaN,0
+fund_master,non-numeric 'min_lumpsum_amount' values set to NaN,0
+fund_master,duplicate rows removed (key ['amfi_code']),0
+fund_master,"expense_ratio_pct outside 0.1-2.5 (flagged, kept)",0
+nav_history,non-numeric 'nav' values set to NaN,0
+nav_history,rows removed: unparseable date / missing NAV,0
+nav_history,"duplicate rows removed (key ['amfi_code', 'date'])",0
+nav_history,rows removed: NAV <= 0,0
+nav_history,weekend/holiday NAV rows forward-filled (is_filled=1),18320
+aum_by_fund_house,fund_house names standardised ('MF' -> 'Mutual Fund'),45
+aum_by_fund_house,rows removed: unparseable date,0
+aum_by_fund_house,non-numeric 'aum_lakh_crore' values set to NaN,0
+aum_by_fund_house,non-numeric 'aum_crore' values set to NaN,0
+aum_by_fund_house,non-numeric 'num_schemes' values set to NaN,0
+aum_by_fund_house,rows removed: negative aum_crore,0
+aum_by_fund_house,"duplicate rows removed (key ['date', 'fund_house'])",0
+monthly_sip_inflows,rows removed: unparseable month,0
+monthly_sip_inflows,non-numeric 'sip_inflow_crore' values set to NaN,0
+monthly_sip_inflows,non-numeric 'active_sip_accounts_crore' values set to NaN,0
+monthly_sip_inflows,non-numeric 'new_sip_accounts_lakh' values set to NaN,0
+monthly_sip_inflows,non-numeric 'sip_aum_lakh_crore' values set to NaN,0
+monthly_sip_inflows,non-numeric 'yoy_growth_pct' values set to NaN,0
+monthly_sip_inflows,rows removed: negative sip_inflow_crore,0
+monthly_sip_inflows,duplicate rows removed (key ['month']),0
+monthly_sip_inflows,"new-account outliers flagged (3 x IQR, kept)",1
+category_inflows,rows removed: unparseable month,0
+category_inflows,non-numeric 'net_inflow_crore' values set to NaN,0
+category_inflows,"duplicate rows removed (key ['month', 'category'])",0
+industry_folio_count,rows removed: unparseable month,0
+industry_folio_count,non-numeric 'total_folios_crore' values set to NaN,0
+industry_folio_count,non-numeric 'equity_folios_crore' values set to NaN,0
+industry_folio_count,non-numeric 'debt_folios_crore' values set to NaN,0
+industry_folio_count,non-numeric 'hybrid_folios_crore' values set to NaN,0
+industry_folio_count,non-numeric 'others_folios_crore' values set to NaN,0
+industry_folio_count,duplicate rows removed (key ['month']),0
+scheme_performance,fund_house names standardised ('MF' -> 'Mutual Fund'),20
+scheme_performance,non-numeric 'return_1yr_pct' values set to NaN,0
+scheme_performance,non-numeric 'return_3yr_pct' values set to NaN,0
+scheme_performance,non-numeric 'return_5yr_pct' values set to NaN,0
+scheme_performance,non-numeric 'benchmark_3yr_pct' values set to NaN,0
+scheme_performance,non-numeric 'alpha' values set to NaN,0
+scheme_performance,non-numeric 'beta' values set to NaN,0
+scheme_performance,non-numeric 'sharpe_ratio' values set to NaN,0
+scheme_performance,non-numeric 'sortino_ratio' values set to NaN,0
+scheme_performance,non-numeric 'std_dev_ann_pct' values set to NaN,0
+scheme_performance,non-numeric 'max_drawdown_pct' values set to NaN,0
+scheme_performance,non-numeric 'aum_crore' values set to NaN,0
+scheme_performance,non-numeric 'expense_ratio_pct' values set to NaN,0
+scheme_performance,non-numeric 'morningstar_rating' values set to NaN,0
+scheme_performance,duplicate rows removed (key ['amfi_code']),0
+scheme_performance,"rows with anomalous values (flagged, kept)",0
+scheme_performance,"'expense_ratio_pct' outside 0.1-2.5 (flagged, kept)",0
+investor_transactions,rows removed: unknown transaction_type,0
+investor_transactions,rows removed: unparseable transaction_date,0
+investor_transactions,non-numeric 'amount_inr' values set to NaN,0
+investor_transactions,rows removed: amount <= 0 or missing,0
+investor_transactions,rows removed: kyc_status not in Verified/Pending/Rejected,0
+investor_transactions,duplicate rows removed,0
+investor_transactions,"amount outliers flagged (3 x IQR per type, kept)",1063
+portfolio_holdings,rows removed: unparseable portfolio_date,0
+portfolio_holdings,non-numeric 'weight_pct' values set to NaN,0
+portfolio_holdings,non-numeric 'market_value_cr' values set to NaN,0
+portfolio_holdings,non-numeric 'current_price_inr' values set to NaN,0
+portfolio_holdings,rows removed: negative weight_pct,0
+portfolio_holdings,"duplicate rows removed (key ['amfi_code', 'stock_symbol', 'portfolio_date'])",0
+benchmark_indices,rows removed: unparseable date,0
+benchmark_indices,non-numeric 'close_value' values set to NaN,0
+benchmark_indices,"duplicate rows removed (key ['date', 'index_name'])",0
+benchmark_indices,rows removed: close_value <= 0,0

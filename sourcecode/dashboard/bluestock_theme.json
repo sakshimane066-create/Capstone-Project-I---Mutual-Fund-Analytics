@@ -1,0 +1,22 @@
+{
+  "name": "Bluestock Fintech",
+  "dataColors": ["#1F4E79", "#2E8B57", "#C55A11", "#7B5EA7", "#E1B12C", "#2A9DB5", "#C0392B", "#5D6D7E"],
+  "background": "#FFFFFF",
+  "foreground": "#1F2A44",
+  "tableAccent": "#1F4E79",
+  "good": "#2E8B57",
+  "neutral": "#E1B12C",
+  "bad": "#C0392B",
+  "maximum": "#1F4E79",
+  "center": "#E1B12C",
+  "minimum": "#DCE6F1",
+  "textClasses": {
+    "title": {"fontFace": "Segoe UI Semibold", "fontSize": 14, "color": "#1F4E79"},
+    "label": {"fontFace": "Segoe UI", "fontSize": 10, "color": "#1F2A44"},
+    "callout": {"fontFace": "Segoe UI Semibold", "fontSize": 28, "color": "#1F4E79"}
+  },
+  "visualStyles": {
+    "page": {"*": {"background": [{"color": {"solid": {"color": "#F4F7FB"}}, "transparency": 0}]}},
+    "*": {"*": {"border": [{"show": true, "color": {"solid": {"color": "#D5DEE9"}}, "radius": 6}]}}
+  }
+}
